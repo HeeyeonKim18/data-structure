@@ -1,7 +1,8 @@
 package coding.interview.stack;
 
 public class StackUsingArray {
-    int[] arr = new int[100]; // it has limited space
+    private final int MAX = 1000;
+    int[] arr = new int[MAX]; // it has limited space
     private int pointer = -1;
 
     private String peek(){
@@ -10,6 +11,8 @@ public class StackUsingArray {
     }
 
     private void push(int value){
+        if(pointer >= MAX) return;
+        new StackOverflowError();
         pointer++;
         arr[pointer] = value;
     }
