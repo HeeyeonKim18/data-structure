@@ -16,7 +16,8 @@ Certain algorithms allow us to simplify our big complexity into smaller or bette
 
 ### Recursion
 
-Not an algorithm is a concept.
+- Not an algorithm, it is a concept.
+- “Anything you do with a recursion can be done iteratively(loop)”
 
 If I want to find a specific file, I can’t do it by just looking at one folder. I want to look at folders recursively to find the file.
 
@@ -32,3 +33,30 @@ It is essential to know that we should provide a certain case in order to termin
 2. Define a recursive case: Define the problem in terms of smaller subproblems. Break the problem down into smaller versions of itself, and call the function recursively to solve each subproblem.
 3. Ensure the recursion terminates: Make sure that the recursive function eventually reaches the base case, and does not enter the infinite loop.
 4. Combine the solutions: Combine the solutions of the subproblems to solve the original problem.
+
+---
+
+### Problems
+
+1. Difficult to understand
+2. Calling functions over and over causes stack overflow
+3. Time complexity: O(2^N)
+
+**Why stack overflow error occurs in recursion?**
+
+If the base case is not reached or not defined, then the stack overflow problem may arise.
+
+**How to make it efficient?**
+
+Time complexity can be O(N) using dynamic programming and memoization.
+
+---
+
+### When to use Recursion
+
+- Every time you are using a tree or converting something into a tree, consider recursion.
+    1. Divided into a number of subproblems that are smaller instances of the same problem.
+    2. Each instance of the subproblems is identical in nature.
+    3. The solutions of each subproblem can be combined to solve the problem at hand.
+
+- Divide and conquer using recursion
