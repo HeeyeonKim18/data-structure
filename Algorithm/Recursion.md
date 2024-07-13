@@ -60,3 +60,20 @@ Time complexity can be O(N) using dynamic programming and memoization.
     3. The solutions of each subproblem can be combined to solve the problem at hand.
 
 - Divide and conquer using recursion
+- Examples of Recursive algorithms: Merge Sort, Quick Sort, Tower of Hanoi, Fibonacci Series, Factorial Problem, etc.
+
+---
+
+### Recursive programming VS Iterative programming?
+
+**The advantages of recursive programming** 
+
+- Recursion provides a clean and simple way to write code.
+- Some problems are inherently recursive like tree traversals, Tower of Hanoi, etc. For such problems, it is preferred to write recursive code.
+
+**The disadvantages**
+
+- The recursive program has greater space requirements than the iterative program as all functions will remain in the stack until the base case is reached.
+- It also has greater time requirements because of function calls and returns overhead.
+- the codes are difficult to understand and hence extra care has to be practiced while writing the code.
+- The computer may run out of memory if the recursive calls are not properly checked.
