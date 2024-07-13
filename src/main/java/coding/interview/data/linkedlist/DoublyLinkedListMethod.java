@@ -1,4 +1,4 @@
-package coding.interview.linkedlist;
+package coding.interview.data.linkedlist;
 
 /**
  * implement LinkedList

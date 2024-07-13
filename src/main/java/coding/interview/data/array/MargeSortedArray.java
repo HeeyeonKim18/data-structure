@@ -1,4 +1,4 @@
-package coding.interview.array;
+package coding.interview.data.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

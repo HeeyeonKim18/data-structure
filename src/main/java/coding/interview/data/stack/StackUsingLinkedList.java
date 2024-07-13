@@ -1,4 +1,4 @@
-package coding.interview.stack;
+package coding.interview.data.stack;
 
 public class StackUsingLinkedList {
 

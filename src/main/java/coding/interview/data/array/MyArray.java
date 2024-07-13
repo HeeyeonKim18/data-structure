@@ -1,4 +1,4 @@
-package coding.interview.array;
+package coding.interview.data.array;
 
 public class MyArray {
     int[] arr;

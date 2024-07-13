@@ -1,4 +1,4 @@
-package coding.interview.tree;
+package coding.interview.data.tree;
 
 public class BinarySearchTree {
 

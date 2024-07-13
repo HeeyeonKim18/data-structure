@@ -1,6 +1,4 @@
-package coding.interview.queue;
-
-import coding.interview.stack.StackUsingLinkedList;
+package coding.interview.data.queue;
 
 public class QueueUsingLinkedList {
 

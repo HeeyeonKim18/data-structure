@@ -1,4 +1,4 @@
-package coding.interview.hashtables;
+package coding.interview.data.hashtables;
 
 import java.util.HashMap;
 import java.util.HashSet;

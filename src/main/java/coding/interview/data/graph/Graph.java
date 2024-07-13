@@ -1,4 +1,4 @@
-package coding.interview.graph;
+package coding.interview.data.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

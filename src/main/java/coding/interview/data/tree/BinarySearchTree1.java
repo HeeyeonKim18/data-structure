@@ -1,4 +1,4 @@
-package coding.interview.tree;
+package coding.interview.data.tree;
 
 // using recursion
 public class BinarySearchTree1 {

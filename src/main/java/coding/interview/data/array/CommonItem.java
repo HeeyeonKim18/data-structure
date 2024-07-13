@@ -1,4 +1,4 @@
-package coding.interview;
+package coding.interview.data.array;
 import java.util.*;
 
 public class CommonItem {
