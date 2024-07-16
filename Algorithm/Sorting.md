@@ -54,3 +54,87 @@ Traverse from left and compare adjacent elements and the higher one is placed at
         }
     }
     ```
+    
+
+---
+
+### Selection Sort
+
+Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest element from the unsorted portion of the list and swapping it with the first element of the unsorted part. This process is repeated for the remaining unsorted portion until the entire list is sorted. 
+
+- Simple and easy to understand and works well with small datasets
+- But, a time complexity is o(n^2) and does not work well on large datasets
+- Time  complexity: O(n^2)
+- Space complexity: O(1)
+
+- Code
+    
+    ```java
+    public class SelectionSort {
+    
+        public void sort(int[] arr) {
+            int length = arr.length;
+            for (int i = 0; i < length - 1; i++) {
+                int tmp = arr[i];
+                int min = i;
+                for (int j = i + 1; j < length; j++) {
+                    if (arr[j] < arr[min]) {
+                        min = j;
+                    }
+                }
+                arr[i] = arr[min];
+                arr[min] = tmp;
+            }
+    
+            for (int i = 0; i < length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    
+        public static void main(String[] args) {
+            SelectionSort selection = new SelectionSort();
+            selection.sort(new int[]{5, 7, 0, 2, 1, 4});
+        }
+    }
+    ```
+    
+
+---
+
+### Insertion Sort
+
+A simple sorting algorithm that works by iteratively inserting each element of unsorted list into its correct position in a sorted portion of the list. It is a stable sorting algorithm, meaning that elements with equal values maintain their relative order in the sorted output.
+
+- Simple and easy to implement, stable sorting algorithm and efficient for small lists and nearly sorted lists
+- But, inefficient for large lists and not as efficient as other sorting algorithms list merge, quick sort for most cases
+- Time complexity: O(n) ~ O(n^2)
+- Space complexity: O(1)
+
+- Code
+    
+    ```java
+    public class InsertionSort {
+    
+        public void sort(int[] arr){ // {23, 1, 10, 5, 2}
+            for (int i = 1; i < arr.length ; i++) {
+                int key = arr[i];
+                int j = i - 1;
+    
+                while (j >= 0 && arr[j] > key) {
+                    arr[j + 1] = arr[j];
+                    j = j - 1;
+                }
+                arr[j + 1] = key;
+            }
+    
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    
+        public static void main(String[] args){
+            InsertionSort insertion = new InsertionSort();
+            insertion.sort(new int[]{23, 1, 10, 5, 2});
+        }
+    }
+    ```
