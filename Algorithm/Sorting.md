@@ -138,3 +138,141 @@ A simple sorting algorithm that works by iteratively inserting each element of u
         }
     }
     ```
+    
+
+---
+
+### Merge Sort
+
+A sorting algorithm that follows the divide-and-conquer approach. It works by recursively dividing the input array into smaller subarrays and sorting those subarrays them merging them back together to obtain the sorted array. It is a popular sorting algorithm known for its efficiency and stability.
+
+`In simple terms, we can say that the process of merge sort is to divide the array into two halves, sort each half, and then merge the sorted halves back together. This process is repeated until the entire array is sorted.` 
+
+**Steps**
+
+- Divide: Divide the list or array recursively into two halves until it can no more be divided.
+- Conquer: Each subarray is sorted individually using the merge sort algorithm.
+- Merge: The sorted subarrays are merged back together in sorted order. The process continues until all elements from both subarrays have been merged.
+
+- Sorting large datasets, it is stable, efficient and it is simple to implement.
+- but it requires additional memory.
+- Time complexity: O(n log n)
+- Space complexity: O(n)
+
+- code
+    
+    ```java
+    public class MergeSort {
+    
+        private int[] sorted;
+    
+        public void merge(int[] arr){
+            sorted = new int[arr.length];
+            divide(arr, 0, arr.length -1);
+            sorted = null;
+            for(int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    
+        private void divide(int[] a, int l, int r) {
+            if(l == r) return;
+            int mid = (l + r) / 2;
+            divide(a, l, mid);
+            divide(a, mid + 1, r);
+            mergeSort(a, l, mid, r);
+    
+        }
+    
+        private void mergeSort(int[] a, int l, int m, int r) {
+            int left = l;
+            int right = m + 1;
+            int idx = l;
+    
+            while(left <= m && right <= r){
+                if(a[left] <= a[right]){
+                    sorted[idx] = a[left];
+                    idx++;
+                    left++;
+                }else{
+                    sorted[idx] = a[right];
+                    idx++;
+                    right++;
+                }
+            }
+    
+            if(left > m){
+                while(right <= r){
+                    sorted[idx] = a[right];
+                    idx++;
+                    right++;
+                }
+            }
+    
+            else{
+                while(left <= m){
+                    sorted[idx] = a[left];
+                    idx++;
+                    left++;
+                }
+            }
+    
+            for (int i = l; i <= r; i++) {
+                a[i] = sorted[i];
+            }
+        }
+    
+        public static void main(String[] args){
+            int[] arr = {99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0};
+            MergeSort sort = new MergeSort();
+            sort.merge(arr);
+        }
+    }
+    ```
+    
+
+---
+
+### Quick Sort
+
+*A sorting algorithm based on the **Divide and Conquer algorithm** that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.*
+
+**To choose pivots**
+
+- First element
+- Last element
+- Random element
+- Middle element
+
+- It is efficient on large data sets and usual time complexity is O(n log n)
+- Worst-case time complexity of O(n^2) and it is unstable
+- Time complexity: O(n log n) ~ O(n^2)
+- Space complexity: O(1) ~ O(n)
+
+---
+
+### **What is stability in sorting algorithms ?**
+
+A sorting algorithm is said to be stable if two objects with equal keys appear in the same order in sorted output as they appear in the input array to be sorted. Some sorting algorithms are stable by nature like Insertion sort, Merge Sort, Bubble Sort, etc. And some sorting algorithms are not, like Heap Sort, Quick Sort, etc.
+
+*Background*: a "stable" sorting algorithm keeps the items with the same sorting key in order. Suppose we have a list of 5-letter words:
+
+```
+peach
+straw
+apple
+spork
+```
+
+If we sort the list by just the first letter of each word then a stable-sort would produce:
+
+```
+apple
+peach
+straw
+spork
+```
+
+In an **unstable** sort algorithm, `straw` or `spork` may be interchanged, but in a stable one, they stay in the same relative positions (that is, since `straw` appears before `spork` in the input, it also appears before `spork` in the output).
+
+We could sort the list of words using this algorithm: stable sorting by column 5, then 4, then 3, then 2, then 1. In the end, it will be correctly sorted. Convince yourself of that. (by the way, that algorithm is called radix sort).
