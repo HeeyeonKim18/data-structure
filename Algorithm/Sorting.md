@@ -247,7 +247,7 @@ A sorting algorithm that follows the divide-and-conquer approach. It works by re
 - It is efficient on large data sets and usual time complexity is O(n log n)
 - Worst-case time complexity of O(n^2) and it is unstable
 - Time complexity: O(n log n) ~ O(n^2)
-- Space complexity: O(1) ~ O(n)
+- Space complexity: O(log n) ~ O(n)
 
 ---
 
@@ -276,3 +276,95 @@ spork
 In an **unstable** sort algorithm, `straw` or `spork` may be interchanged, but in a stable one, they stay in the same relative positions (that is, since `straw` appears before `spork` in the input, it also appears before `spork` in the output).
 
 We could sort the list of words using this algorithm: stable sorting by column 5, then 4, then 3, then 2, then 1. In the end, it will be correctly sorted. Convince yourself of that. (by the way, that algorithm is called radix sort).
+
+---
+
+### Which Sort is Best?
+
+**Insertion Sort**
+
+- Best used for small datasets.
+- Efficient when the data is almost sorted.
+- Time complexity: O(n²) in the worst case, but O(n) in the best case when the data is nearly sorted.
+
+**Bubble Sort**
+
+- Generally used for educational purposes due to its inefficiency.
+- Rarely used in practice.
+- Time complexity: O(n²).
+
+**Selection Sort**
+
+- Similar to Bubble Sort in terms of inefficiency.
+- Primarily used for educational purposes.
+- Time complexity: O(n²).
+
+**Merge Sort**
+
+- Highly efficient with a consistent time complexity of O(n log n).
+- Requires additional space for merging, which can be a drawback.
+- Guarantees O(n log n) time complexity even in the worst case.
+
+**Quick Sort**
+
+- Popular and efficient with average time complexity of O(n log n).
+- Space complexity is O(log n), making it more space-efficient than Merge Sort.
+- However, has a worst-case time complexity of O(n²), which occurs with poorly chosen pivots.
+
+**Heap Sort**
+
+- Similar in efficiency to Merge Sort and Quick Sort.
+- Space complexity: O(1), which is better than Merge Sort.
+- Slower than Quick Sort in practice despite having the same O(n log n) time complexity.
+
+### Why is Quick Sort Faster than Heap Sort Despite Having the Same Time Complexity?
+
+The key advantage of Quick Sort is its fewer number of swaps:
+
+- Quick Sort minimizes unnecessary swaps, which are time-consuming operations.
+- Heap Sort involves many swaps, even if the data is already ordered.
+- Merge Sort involves writing data to additional arrays, which also increases time consumption.
+
+---
+
+### Radix Sort and Counting Sort
+
+**Comparison Sorts**
+
+- Examples: Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort.
+- Mathematically, comparison-based sorts cannot be better than O(n log n) in the worst case because each element must be compared.
+
+**Non-Comparison Sorts**
+
+- Examples: Radix Sort, Counting Sort.
+- These sorts work with specific types of data, such as integers of fixed length.
+- They avoid comparisons between elements, resulting in time complexities of O(nk) or O(n + k), where k is a constant. This can be more efficient than O(n log n) for large datasets with small range values.
+
+---
+
+### Case
+
+**#1 - Sort 10 schools around your house by distance:**
+insertion sort
+
+**#2 - eBay sorts listings by the current Bid amount:**
+radix or counting sort
+
+**#3 - Sort scores on ESPN**
+Quick sort
+
+**#4 - Massive database (can't fit all into memory) needs to sort through past year's user data**
+Merge Sort
+
+**#5 - Almost sorted Udemy review data needs to update and add 2 new reviews**
+Insertion Sort
+
+**#6 - Temperature Records for the past 50 years in Canada**
+radix or counting Sort
+Quick sort if decimal places
+
+**#7 - Large user name database needs to be sorted. Data is very random.**
+Quick sort
+
+**#8 - You want to teach sorting**
+Bubble sort
