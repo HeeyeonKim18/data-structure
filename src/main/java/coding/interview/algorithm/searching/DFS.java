@@ -1,8 +1,6 @@
 package coding.interview.algorithm.searching;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class DFS {
     private Node root;
@@ -90,8 +88,14 @@ public class DFS {
     public void inOrder(){
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> result = traversalInOrder(root, list);
+        List<Integer> result2 = inOrderUsingStack(root);
 
         System.out.print("DFS in-order: ");
+        for (Integer integer : result) {
+            System.out.print(integer + " ");
+        }
+
+        System.out.print("\nDFS in-order using a stack: ");
         for (Integer integer : result) {
             System.out.print(integer + " ");
         }
@@ -104,6 +108,22 @@ public class DFS {
         list.add(root.value);
         if(root.right != null){
             traversalInOrder(root.right, list);
+        }
+        return list;
+    }
+
+    public List<Integer> inOrderUsingStack(Node root){
+        List<Integer> list = new ArrayList<>();
+        if(root == null) return list;
+        Stack<Node> stack = new Stack<>();
+        while(root != null || !stack.isEmpty()){
+            while(root != null){
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            list.add(root.value);
+            root = root.right;
         }
         return list;
     }
