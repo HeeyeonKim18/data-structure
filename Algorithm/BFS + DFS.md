@@ -47,6 +47,7 @@ Go through trees or graph in a level-by-level manner
 
 - The way breath first search works is that you start with the root node and move left to right across the second level. Then move left to right the third level and so on and so forth until you find the node you’re looking for or the tree ends.
 - It uses additional memory because it is necessary to track the child nodes of all the nodes on a given level while searching that level, this means that we need to track every node and its children in order.
+- It is usually good for shortest path
 
 - Code
     
@@ -113,6 +114,7 @@ Go through trees or graph in a level-by-level manner
 
 - The search follows one branch of the tree down as many levels as possible until the target node is found or the end is reached. When the search can’t go on any further, it continues at the nearest ancestor with an unexplored child.
 - Depth for search has a Lower memory requirement than Breadth for Search because it is not necessary to store all the child pointers at each level, something that we’ll see when we actually code it.
+- It is really good to see if something exists like a maze
 
 - Code
     
@@ -208,6 +210,15 @@ Go through trees or graph in a level-by-level manner
 - Determining whether a path exists between two nodes: DFS
     - That is what Depth first search is built for.
 - Finding the shortest path: BFS
+
+---
+
+### Dijkstra and Bellman-Ford
+
+Although Breadth-First Search can find the shortest path in an unweighted graph, Dijkstra’s and Bellman-Ford algorithms are specifically designed for finding the shortest path in weighted graphs.
+
+- **Dijkstra's algorithm** has better time complexity compared to Bellman-Ford but cannot handle negative edge weights.
+- **Bellman-Ford algorithm** is effective for graphs with negative edge weights but has a higher time complexity than Dijkstra's.
 
 ---
 
